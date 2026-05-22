@@ -1,0 +1,4 @@
+to start server
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres PORT=3000 pnpm --filter @workspace/api-server dev
+to start front end server
+PORT=5173 BASE_PATH=/ pnpm --filter @workspace/farm-by-gaavwala dev

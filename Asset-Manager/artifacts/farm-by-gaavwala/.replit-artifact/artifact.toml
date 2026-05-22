@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Farm By Gaavwala"
+version = "1.0.0"
+id = "artifacts/farm-by-gaavwala"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21185
+
+[services.development]
+run = "pnpm --filter @workspace/farm-by-gaavwala run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/farm-by-gaavwala", "run", "build" ]
+publicDir = "artifacts/farm-by-gaavwala/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21185"
+BASE_PATH = "/"
